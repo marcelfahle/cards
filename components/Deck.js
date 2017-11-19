@@ -23,6 +23,10 @@ class Deck extends React.Component {
     };
   }
 
+  reset() {
+    this.setState({ deck: buildDeck() });
+  }
+
   shuffle() {
     const { deck } = this.state;
     for (let c = deck.length - 1; c > 0; c--) {
@@ -38,6 +42,7 @@ class Deck extends React.Component {
     const { deck } = this.state;
     return [
       <div key="controls" className="controls">
+        <button onClick={() => this.reset()}>Reset</button>
         <button onClick={() => this.shuffle()}>Shuffle</button>
         <style jsx>{`
           .controls {
