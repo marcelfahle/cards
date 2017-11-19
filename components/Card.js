@@ -75,14 +75,15 @@ class Card extends React.Component {
           .card-wrapper {
             position: relative;
             display: inline-block;
-            width: 100px;
+            width: 50px;
             margin-right: 10px;
+            margin-left: 10px;
+            margin-bottom: 20px;
             cursor pointer;
           }
           .card {
             box-sizing: border-box;
-            width: 64px;
-            height: 100px;
+            height: 78px;
             padding: 4px;
             transition: all 0.6s ease;
             transform-style: preserve-3d;
@@ -91,20 +92,20 @@ class Card extends React.Component {
           .back {
             position: absolute;
             background: white;
-            width: 64px;
-            height: 100px;
+            width: 100%;
+            height: 100%;
             top: 0;
             left: 0;
             border-radius: 5px;
-            box-shadow: 0 27px 55px 0 rgba(0, 0, 0, 0.3),
-              0 17px 17px 0 rgba(0, 0, 0, 0.15);
+            box-shadow: 0 7px 15px 0 rgba(0, 0, 0, 0.3),
+              0 9px 9px 0 rgba(0, 0, 0, 0.15);
             backface-visibility: hidden;
           }
           .front {
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 30px;
+            font-size: 16px;
           }
           .back {
             display: flex;
@@ -117,11 +118,6 @@ class Card extends React.Component {
           }
           .back {
             transform: rotateY(180deg);
-          }
-        `}</style>
-        <style jsx global>{`
-          body {
-            background: #eee;
           }
         `}</style>
       </div>
