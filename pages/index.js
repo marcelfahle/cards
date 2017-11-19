@@ -6,7 +6,7 @@ export default () => (
     <Deck />
     <style jsx global>{`
       body {
-        background: #eee;
+        background: #0a6635;
         margin: 0;
         padding: 0;
       }

@@ -24,16 +24,16 @@ class Card extends React.Component {
 
     switch (suit.toLowerCase()) {
       case 'hearts':
-        s = ['9829', 'red'];
+        s = ['9829', '#b45d5c'];
         break;
       case 'diamonds':
-        s = ['9830', 'red'];
+        s = ['9830', '#b45d5c'];
         break;
       case 'spades':
-        s = ['9824', 'black'];
+        s = ['9824', '#504a4f'];
         break;
       case 'clubs':
-        s = ['9827', 'black'];
+        s = ['9827', '#504a4f'];
         break;
       default:
         throw new Error('Suit not found.');
@@ -41,10 +41,32 @@ class Card extends React.Component {
     }
 
     return (
-      <span>
-        {String.fromCharCode(s[0])} {rank}
-        <style jsx>{`color: ${s[1]};`}</style>
-      </span>
+      <div className="card-content">
+        <span className="suit">{String.fromCharCode(s[0])}</span>
+        <span className="rank">{rank}</span>
+        <style jsx>{`
+          .card-content {
+            color: ${s[1]};
+            position: relative;
+            width: 100%;
+            height: 100%;
+          }
+          .rank {
+            position: absolute;
+            left: 4px;
+            font-family: sans-serif;
+            font-size: 20px;
+            text-transform: uppercase;
+          }
+          .suit {
+            font-size: 40px;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translateX(-50%) translateY(-50%);
+          }
+        `}</style>
+      </div>
     );
   }
 
@@ -96,9 +118,9 @@ class Card extends React.Component {
             height: 100%;
             top: 0;
             left: 0;
-            border-radius: 5px;
-            box-shadow: 0 7px 15px 0 rgba(0, 0, 0, 0.3),
-              0 9px 9px 0 rgba(0, 0, 0, 0.15);
+            border-radius: 3px;
+            box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.3),
+              0 2px 2px 0 rgba(0, 0, 0, 0.15);
             backface-visibility: hidden;
           }
           .front {
